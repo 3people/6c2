@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+export default function App() {
+  const [order, setOrder] = useState([]);
+  const shuffleArray = (array) => {
+    for (let index = array.length - 1; index > 0; index--) {
+      const randomPosition = Math.floor(Math.random() * (index + 1));
+      const temporary = array[index];
+      array[index] = array[randomPosition];
+      array[randomPosition] = temporary;
+    }
+  };
+
+  const makeOrder = () => {
+    const people = [
+      "이효원",
+      "최재영",
+      "이정규",
+      "배성훈",
+      "박제균",
+      "이세명",
+      "박현준",
+    ];
+    let randomOrder = [];
+    shuffleArray(people);
+    for (let i = 0; i < people.length; i++) {
+      randomOrder.push([
+        people[i],
+        people[(i + 1) % people.length],
+        people[(i + 2) % people.length],
+      ]);
+    }
+    setOrder(randomOrder);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+        {order.map((el) => {
+          return <li key={el}>{`${el[0]}: ${el[1]} ${el[2]}`}</li>;
+        })}
+      </ul>
+      <button onClick={() => makeOrder()}>shuffle</button>
     </div>
   );
 }
-
-export default App;
