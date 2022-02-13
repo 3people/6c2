@@ -14,15 +14,7 @@ export default function App() {
   };
 
   const makeOrder = () => {
-    const people = [
-      "이효원",
-      "최재영",
-      "이정규",
-      "배성훈",
-      "박제균",
-      "이세명",
-      "박현준",
-    ];
+    const people = ["이효원", "최재영", "이정규", "박제균", "이세명", "박현준"];
     let randomOrder = [];
     shuffleArray(people);
     for (let i = 0; i < people.length; i++) {
@@ -36,15 +28,7 @@ export default function App() {
   };
 
   const pickMC = () => {
-    const people = [
-      "이효원",
-      "최재영",
-      "이정규",
-      "배성훈",
-      "박제균",
-      "이세명",
-      "박현준",
-    ];
+    const people = ["이효원", "최재영", "이정규", "박제균", "이세명", "박현준"];
     shuffleArray(people);
     let mcIdx = Math.floor(Math.random() * people.length);
     setMC(people[mcIdx]);
