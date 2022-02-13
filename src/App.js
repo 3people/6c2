@@ -47,6 +47,7 @@ export default function App() {
         <span>{mc}</span>
         <button onClick={() => pickMC()}>진행자 뽑기</button>
       </div>
+      <div>명예의 전당: 배성훈</div>
     </div>
   );
 }
