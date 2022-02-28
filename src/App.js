@@ -14,7 +14,7 @@ export default function App() {
   };
 
   const makeOrder = () => {
-    const people = ["이효원", "최재영", "이정규", "박제균", "이세명", "박현준"];
+    const people = ["이효원", "이정규", "박제균", "이세명", "박현준"];
     let randomOrder = [];
     shuffleArray(people);
     for (let i = 0; i < people.length; i++) {
@@ -28,7 +28,7 @@ export default function App() {
   };
 
   const pickMC = () => {
-    const people = ["이효원", "최재영", "이정규", "박제균", "이세명", "박현준"];
+    const people = ["이효원", "이정규", "박제균", "이세명", "박현준"];
     shuffleArray(people);
     let mcIdx = Math.floor(Math.random() * people.length);
     setMC(people[mcIdx]);
@@ -47,7 +47,7 @@ export default function App() {
         <span>{mc}</span>
         <button onClick={() => pickMC()}>진행자 뽑기</button>
       </div>
-      <div>명예의 전당: 배성훈</div>
+      <div>명예의 전당: 배성훈, 최재영</div>
     </div>
   );
 }
